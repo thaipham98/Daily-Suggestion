@@ -8,23 +8,19 @@ public class Manager implements ManagerInterface {
 
     @Override
     public RestResponse getSuggestions(String occupation, String character, String weather) {
-        Profile profile = buildProfile(occupation, character);
-        Weather weatherInfo = buildWeather(weather);
-        String suggestion = buildSuggestion(profile, weatherInfo) + "!";
-        return buildResponse(suggestion);
-    }
-
-    private RestResponse buildResponse(String suggestion) {
         RestResponse response;
 
         try {
+            Profile profile = buildProfile(occupation, character);
+            Weather weatherInfo = buildWeather(weather);
+            String suggestion = buildSuggestion(profile, weatherInfo) + "!";
             response = RestResponse.builder()
                     .response(suggestion)
                     .responseStatus(RestResponse.OK)
                     .build();
         } catch (Exception e) {
             response = RestResponse.builder()
-                    .response(suggestion)
+                    .response(null)
                     .responseStatus(RestResponse.NOT_FOUND)
                     .build();
         }
@@ -33,35 +29,52 @@ public class Manager implements ManagerInterface {
     }
 
     private String buildSuggestion(Profile profile, Weather weatherInfo) {
-        return Suggestion.builder()
-                .profile(profile)
-                .weather(weatherInfo)
-                .build()
-                .suggest();
+        try {
+            return Suggestion.builder()
+                    .profile(profile)
+                    .weather(weatherInfo)
+                    .build()
+                    .suggest();
+
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Invalid argument");
+        }
     }
 
     private Weather buildWeather(String weather) {
-        String[] weatherInfo = weather.split("\\|");
-        String degree = weatherInfo[0].trim().split("°")[0];
-        String description = weatherInfo[1].trim();
 
-        if (Weather.isBadWeather(description)) {
-            return BadWeather.builder()
+        try {
+            String[] weatherInfo = weather.split("\\|");
+            String degree = weatherInfo[0].trim().split("°")[0];
+            String description = weatherInfo[1].trim();
+
+            if (Weather.isBadWeather(description)) {
+                return BadWeather.builder()
+                        .degree(Double.parseDouble(degree))
+                        .description(description)
+                        .build();
+            }
+
+            return NiceWeather.builder()
                     .degree(Double.parseDouble(degree))
                     .description(description)
                     .build();
+
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Invalid argument");
         }
 
-        return NiceWeather.builder()
-                .degree(Double.parseDouble(degree))
-                .description(description)
-                .build();
     }
 
     private Profile buildProfile(String occupation, String character) {
-        return Profile.builder()
-                .character(Characteristic.valueOf(character.toUpperCase()))
-                .occupation(Occupation.valueOf(occupation.toUpperCase()))
-                .build();
+
+        try {
+            return Profile.builder()
+                    .character(Characteristic.valueOf(character.toUpperCase()))
+                    .occupation(Occupation.valueOf(occupation.toUpperCase()))
+                    .build();
+        } catch (Exception e) {
+            throw new IllegalArgumentException("Invalid argument");
+        }
     }
 }
