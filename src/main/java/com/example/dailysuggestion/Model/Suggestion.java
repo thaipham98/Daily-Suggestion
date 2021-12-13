@@ -11,6 +11,9 @@ import static com.example.dailysuggestion.Model.Characteristic.INTROVERT;
 import static com.example.dailysuggestion.Model.Occupation.STUDENT;
 import static com.example.dailysuggestion.Model.Occupation.WORKER;
 
+/**
+ * Represent suggestion accordingly
+ */
 @Builder
 public class Suggestion {
 
@@ -25,6 +28,10 @@ public class Suggestion {
     private Profile profile;
     private Weather weather;
 
+    /**
+     *
+     * @return Suggestion based on user's profile and current weather
+     */
     public String suggest() {
         Random randomizer = new Random();
         if (weather.isBadWeather()) {

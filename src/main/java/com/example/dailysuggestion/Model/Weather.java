@@ -6,6 +6,10 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+
+/**
+ * Represent the current weather detail
+ */
 @AllArgsConstructor
 public abstract class Weather {
 
@@ -22,11 +26,24 @@ public abstract class Weather {
                 '}';
     }
 
+    /**
+     *
+     * Inform about the current weather
+     */
     public abstract String inform();
 
+    /**
+     *
+     * @param description weather description
+     * @return whether the weather is nice or bad
+     */
     public static boolean isBadWeather(String description) {
         return BAD_CONDITION.contains(description.split(",")[0]);
     }
 
+    /**
+     *
+     * @return whether the weather is nice or bad
+     */
     public abstract boolean isBadWeather();
 }

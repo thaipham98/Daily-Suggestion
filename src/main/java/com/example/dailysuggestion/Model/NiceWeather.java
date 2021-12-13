@@ -2,6 +2,9 @@ package com.example.dailysuggestion.Model;
 
 import lombok.Builder;
 
+/**
+ * Represent nice weather
+ */
 public class NiceWeather extends Weather{
 
     @Builder

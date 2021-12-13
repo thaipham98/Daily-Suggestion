@@ -2,6 +2,9 @@ package com.example.dailysuggestion.Model;
 
 import lombok.Builder;
 
+/**
+ * Represent the response returned to the UI
+ */
 @Builder
 public class RestResponse {
 

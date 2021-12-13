@@ -1,4 +1,7 @@
 $(document).ready(
+    /**
+     * Display data when user clicks on the button to get the weather
+     */
     function () {
         $("#get_weather_forecast").click(function () {
             var zip = $("#zip").val();
@@ -39,6 +42,9 @@ $(document).ready(
             }
         }); // end weather click
 
+        /**
+         * Display data when user clicks on the button to get suggestion
+         */
         $("#suggest_thing_to_do").click(function () {
             var occupation = '';
             if(document.getElementById('student').checked) {

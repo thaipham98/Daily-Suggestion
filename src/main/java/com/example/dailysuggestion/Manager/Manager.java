@@ -3,9 +3,19 @@ package com.example.dailysuggestion.Manager;
 import com.example.dailysuggestion.Model.*;
 import org.springframework.stereotype.Service;
 
+/**
+ * Logic handler of the application
+ */
 @Service
 public class Manager implements ManagerInterface {
 
+    /**
+     *
+     * @param occupation
+     * @param character
+     * @param weather
+     * @return RestResponse that returns to frontend site
+     */
     @Override
     public RestResponse getSuggestions(String occupation, String character, String weather) {
         RestResponse response;
@@ -28,6 +38,12 @@ public class Manager implements ManagerInterface {
         return response;
     }
 
+    /**
+     *
+     * @param profile
+     * @param weatherInfo
+     * @return suggestion based on user profile and current weather
+     */
     private String buildSuggestion(Profile profile, Weather weatherInfo) {
         try {
             return Suggestion.builder()
@@ -41,6 +57,11 @@ public class Manager implements ManagerInterface {
         }
     }
 
+    /**
+     *
+     * @param weather
+     * @return weather detail based on UI data
+     */
     private Weather buildWeather(String weather) {
 
         try {
@@ -66,6 +87,12 @@ public class Manager implements ManagerInterface {
 
     }
 
+    /**
+     *
+     * @param occupation
+     * @param character
+     * @return user profile based on UI data
+     */
     private Profile buildProfile(String occupation, String character) {
 
         try {

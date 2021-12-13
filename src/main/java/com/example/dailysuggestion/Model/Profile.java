@@ -2,6 +2,9 @@ package com.example.dailysuggestion.Model;
 
 import lombok.Builder;
 
+/**
+ * Represent profile of an user
+ */
 @Builder
 public class Profile {
 

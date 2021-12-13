@@ -6,6 +6,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * Controller of HTTP request
+ */
 @org.springframework.web.bind.annotation.RestController
 @AllArgsConstructor
 public class RestController {
