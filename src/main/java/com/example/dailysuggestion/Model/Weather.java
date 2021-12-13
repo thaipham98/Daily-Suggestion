@@ -14,6 +14,14 @@ public abstract class Weather {
     protected Double degree;
     protected String description;
 
+    @Override
+    public String toString() {
+        return "Weather{" +
+                "degree=" + degree +
+                ", description='" + description + '\'' +
+                '}';
+    }
+
     public abstract String inform();
 
     public static boolean isBadWeather(String description) {
