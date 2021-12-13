@@ -16,6 +16,7 @@ public class RestController {
     public RestResponse suggestThingToDo(@RequestParam("occupation") String occupation,
                                          @RequestParam("character") String character,
                                          @RequestParam("weather") String weather) {
+
         return manager.getSuggestions(occupation, character, weather);
     }
 }
