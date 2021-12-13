@@ -42,4 +42,4 @@ The application is a class project. Specifically, it contains:
 ### Caveats
 The project can be improved given more time, for examples in some areas like:
 - Robustness: More extensive testing and design to bring more OOP or other design patterns (MVC) to increase robustness and maintenance ease.
-- Scalability: Currently, the application is simple with a few options for making a profile of an user. 
+- Scalability: Currently, the application is simple with a few options for making a profile of an user. More options and features may be developed in the future.
