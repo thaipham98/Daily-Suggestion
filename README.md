@@ -14,11 +14,11 @@ git clone https://github.com/thaipham98/Daily-Suggestion.git
 ```bash
  mvn spring-boot:run
 ```
-or find the `DailySuggestionApplication` at `src/main/java/com/example/dailysuggestion/DailySuggestionApplication.java` then run the program.
+or find the `DailySuggestionApplication` at `src/main/java/com/example/dailysuggestion/DailySuggestionApplication.java` then run the program
 5. After the server is hosted up, open a web browser and go to `localhost:8080/home`. This URL can change so make sure you go to the right port number.
 6. Enjoy my application
 7. Stop the application 
 ```bash
  mvn spring-boot:stop
 ```
-or stop your running program.
+or stop your running program
