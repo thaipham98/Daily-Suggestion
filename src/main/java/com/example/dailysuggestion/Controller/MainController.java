@@ -10,6 +10,6 @@ public class MainController {
     @GetMapping("/home")
     public String main(Model model) {
 
-        return "homepage"; //view
+        return "index"; //view
     }
 }
