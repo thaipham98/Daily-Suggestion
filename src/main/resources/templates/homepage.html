@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Forecast</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"></script>
+    <script src="script.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            &nbsp;
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-6" style="background-color: orange;">
+            <h1> Profile</h1>
+
+            <form id="profile_form">
+                <p>You are a:</p>
+                <input type="radio" id="student" name="occupation" value="Student">
+                <label for="student">Student</label><br>
+                <input type="radio" id="worker" name="occupation" value="Worker">
+                <label for="worker">Worker</label><br>
+
+                <br>
+
+                <p>You also are a:</p>
+                <input type="radio" id="introvert" name="character" value="Introvert">
+                <label for="introvert">Introvert</label><br>
+                <input type="radio" id="extrovert" name="character" value="Extrovert">
+                <label for="extrovert">Extrovert</label><br>
+            </form>
+            <br>
+            <div id="profile"></div>
+
+            <h1>Weather Today</h1>
+            <br>
+            <!--
+            Once you have sent at least one successful text message,
+            replace textbelt with a real key:
+            2a45e0c669ef25b50efc080afcd309fe67112409k1FQu7NIwmsjtCZlKskagTDxy
+            //-->
+            <form id="weather_forecast">
+                <input type="hidden" name="key" value="207e19459d3c8a3b9350554022c23635">
+                <label for="ZIP">ZIP:</label>
+                <input type="text" id="zip" name="ZIP"><br>
+                <br>
+                <input type="button" id="get_weather_forecast" value="How's weather today?" class="btn btn-primary"><br>
+            </form>
+            <br>
+            <div id="show_city_icon"></div>
+            <div id="show_weather"></div>
+            <br>
+            <h1>Suggestion of thing to do</h1>
+            <div id="show_suggestions"></div>
+            <br>
+            <form id="suggestion">
+                <input type="button" id="suggest_thing_to_do" value="What should I do today?" class="btn btn-primary"><br>
+            </form>
+            <br>
+            <div id="show_thing_to_do"></div>
+
+        </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+        </div>
+    </div>
+</div>
+</body>
+</html>
