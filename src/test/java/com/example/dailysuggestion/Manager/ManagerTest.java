@@ -79,7 +79,7 @@ class ManagerTest {
     }
 
     @Test
-    void givenNotValidResponse_whenGetSuggestions_returnCorrectResult() {
+    void givenNotValidParameters_whenGetSuggestions_returnCorrectResult() {
         String occupation = "teacher";
         String character = "introvert";
         String weather = "Cloudy";
