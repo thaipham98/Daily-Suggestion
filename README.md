@@ -11,7 +11,7 @@ Daiy Suggestion is a web application made with Spring Boot framework, which sugg
 git clone https://github.com/thaipham98/Daily-Suggestion.git
 ```
 
-3. Open the project with an IDE (IntelliJ preferred)
+3. Open the project with an IDE (IntelliJ preferred). Make sure you have a compatible SDK.
 
 4. Start the application
 ```bash
