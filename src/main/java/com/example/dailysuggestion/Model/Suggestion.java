@@ -17,8 +17,10 @@ import static com.example.dailysuggestion.Model.Occupation.WORKER;
 @Builder
 public class Suggestion {
 
-    private static final List<String> BAD_WEATHER_STUDENT_INDOOR_ACTIVITIES = Arrays.asList("playing video games", "reading a book", "cooking your favorite dish", "watching a movie", "doing some yoga");
-    private static final List<String> BAD_WEATHER_WORKER_INDOOR_ACTIVITIES = Arrays.asList("a Broadway show", "going to spa", "a steak dine in", "making wine");
+    private static final List<String> BAD_WEATHER_STUDENT_INDOOR_ACTIVITIES = Arrays.asList("playing video games", "reading a book", "cooking your favorite dish", "bing-watching a movie", "doing some yoga");
+    private static final List<String> BAD_WEATHER_STUDENT_OUTDOOR_ACTIVITIES = Arrays.asList("a friend gathering", "a drinking game with your friends", "watching a movie with your family", "playing boardgame");
+    private static final List<String> BAD_WEATHER_WORKER_INDOOR_ACTIVITIES = Arrays.asList("going to spa", "a steak dine in", "making wine");
+    private static final List<String> BAD_WEATHER_WORKER_OUTDOOR_ACTIVITIES = Arrays.asList("a Broadway show", "a hotpot with friends", "going to casino", "a karaoke");
     private static final List<String> NICE_WEATHER_STUDENT_INDOOR_ACTIVITIES = Arrays.asList("go to a museum", "go to the library", "go to a coffee", "go to the gym");
     private static final List<String> NICE_WEATHER_STUDENT_OUTDOOR_ACTIVITIES = Arrays.asList("play your favorite sport", "go around in the park", "run by the river", "go picnic with your family", "go hiking with your friends");
     private static final List<String> NICE_WEATHER_WORKER_INDOOR_ACTIVITIES = Arrays.asList("go to a restaurant", "go to an art gallery", "go to the museum", "go to a shopping mall");
@@ -39,13 +41,13 @@ public class Suggestion {
                 return weather.inform() + BAD_WEATHER_STUDENT_INDOOR_ACTIVITIES.get(randomizer.nextInt(BAD_WEATHER_STUDENT_INDOOR_ACTIVITIES.size()));
             }
             else if (profile.getOccupation() == STUDENT && profile.getCharacter() == EXTROVERT) {
-                return weather.inform() + BAD_WEATHER_STUDENT_INDOOR_ACTIVITIES.get(randomizer.nextInt(BAD_WEATHER_STUDENT_INDOOR_ACTIVITIES.size()));
+                return weather.inform() + BAD_WEATHER_STUDENT_OUTDOOR_ACTIVITIES.get(randomizer.nextInt(BAD_WEATHER_STUDENT_OUTDOOR_ACTIVITIES.size()));
             }
             else if (profile.getOccupation() == WORKER && profile.getCharacter() == INTROVERT) {
                 return weather.inform() + BAD_WEATHER_WORKER_INDOOR_ACTIVITIES.get(randomizer.nextInt(BAD_WEATHER_WORKER_INDOOR_ACTIVITIES.size()));
             }
             else if (profile.getOccupation() == WORKER && profile.getCharacter() == EXTROVERT) {
-                return weather.inform() + BAD_WEATHER_WORKER_INDOOR_ACTIVITIES.get(randomizer.nextInt(BAD_WEATHER_WORKER_INDOOR_ACTIVITIES.size()));
+                return weather.inform() + BAD_WEATHER_WORKER_OUTDOOR_ACTIVITIES.get(randomizer.nextInt(BAD_WEATHER_WORKER_OUTDOOR_ACTIVITIES.size()));
             }
         }
 
