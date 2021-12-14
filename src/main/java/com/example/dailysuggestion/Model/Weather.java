@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
@@ -13,7 +14,7 @@ import java.util.Set;
 @AllArgsConstructor
 public abstract class Weather {
 
-    private static final Set<String> BAD_CONDITION = new HashSet<>(Arrays.asList("Thunderstorm, Drizzle, Rain, Snow, Atmosphere"));
+    private static final Set<String> BAD_CONDITION = new HashSet<>(List.of("Thunderstorm", "Drizzle", "Rain", "Snow", "Atmosphere"));
 
     protected Double degree;
     protected String description;
@@ -38,7 +39,8 @@ public abstract class Weather {
      * @return whether the weather is nice or bad
      */
     public static boolean isBadWeather(String description) {
-        return BAD_CONDITION.contains(description.split(",")[0]);
+        String detail = description.split(",")[0];
+        return BAD_CONDITION.contains(detail);
     }
 
     /**
